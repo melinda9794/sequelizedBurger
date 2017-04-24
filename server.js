@@ -17,10 +17,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-
-var router = require('./controllers/burgers_controllers.js');
-app.use('/', router);
-
 //routing
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);

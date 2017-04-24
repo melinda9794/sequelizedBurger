@@ -4,7 +4,7 @@ module.exports = function(app) {
     app.post("/", (req, res) => {
         db.Burger.create({
             burger_name: req.body.burger_name
-        }).then( (burgerdb) => {
+        }).then( (burgers_db) => {
             res.redirect("/");
         });
     });
@@ -16,7 +16,7 @@ module.exports = function(app) {
             where: {
                 id: req.params.id
             }
-        }).then( (burgerdb) => {
+        }).then( (burgers_db) => {
             res.redirect("/");
         })
     });
@@ -28,7 +28,7 @@ module.exports = function(app) {
             where: {
                 devoured: true
             }
-        }).then( (burgersdb) => {
+        }).then( (burgers_db) => {
             res.redirect("/");
         });
     });
